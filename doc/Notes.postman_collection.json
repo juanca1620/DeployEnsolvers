@@ -1,0 +1,192 @@
+{
+	"info": {
+		"_postman_id": "97b9b31c-fca0-415c-be4c-1b09655440f1",
+		"name": "Notes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "46163910",
+		"_collection_link": "https://juancamilosoto.postman.co/workspace/ENSOLVERS~748d26de-c18e-4028-9284-c49c805bfd0f/collection/46163910-97b9b31c-fca0-415c-be4c-1b09655440f1?action=share&source=collection_link&creator=46163910"
+	},
+	"item": [
+		{
+			"name": "create note",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "userId",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"Test\",\r\n    \"content\":\"Note's Content\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/api/v1/notes?trace=true",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"notes"
+					],
+					"query": [
+						{
+							"key": "trace",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Archive Notes",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "UserId",
+						"value": "UserId",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"note_id\" : \"123\",\r\n    \"active\" : true \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/api/v1/notes/changueStatus",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"notes",
+						"changueStatus"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update note Copy",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "UserId",
+						"value": "UserId",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":\"123\",\r\n    \"title\":\"Test\",\r\n    \"content\":\"Note's Content\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/api/v1/notes",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"notes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "UserId",
+						"value": "UserId",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user_name\":\"user\",\r\n    \"password\":\"1234\"\r\n}"
+				},
+				"url": {
+					"raw": "{{host}}/api/v1/notes/idNote",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"notes",
+						"idNote"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Notes by user",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "UserId",
+						"value": "UserId",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user_name\":\"user\",\r\n    \"password\":\"1234\"\r\n}"
+				},
+				"url": {
+					"raw": "{{host}}/api/v1/notes?category=categoryId&active=false",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"notes"
+					],
+					"query": [
+						{
+							"key": "category",
+							"value": "categoryId"
+						},
+						{
+							"key": "active",
+							"value": "false"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
